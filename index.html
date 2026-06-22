@@ -10,7 +10,6 @@
   html, body {
     height: 100%;
     font-family: 'Vazirmatn', Tahoma, sans-serif;
-    background: #0b0b0b;
     color: #e8e4dc;
     display: flex;
     align-items: center;
@@ -18,9 +17,31 @@
     padding: 24px;
     text-align: center;
   }
+  body {
+    background: #0a0a0a;
+  }
+  .bg-logo {
+    position: fixed;
+    inset: 0;
+    background: url('tekye (3).png') center center no-repeat;
+    background-size: contain;
+    opacity: 0.15;
+    z-index: -2;
+  }
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(5, 5, 5, 0.85),
+      rgba(8, 8, 8, 0.9)
+    );
+    z-index: -1;
+  }
   .wrap {
     max-width: 640px;
     width: 100%;
+    padding: 48px 32px;
   }
   .top-line {
     width: 60px;
@@ -59,28 +80,53 @@
     align-items: center;
     gap: 10px;
     padding: 13px 26px;
-    border: 1px solid #2a2a2a;
-    background: #141414;
+    border: 1px solid rgba(139, 30, 30, 0.4);
+    background: rgba(20, 20, 20, 0.8);
     color: #e8e4dc;
     text-decoration: none;
     font-size: 15px;
     border-radius: 4px;
-    transition: background .2s ease, border-color .2s ease;
+    transition: all .25s ease;
   }
   .btn:hover {
-    background: #1c1c1c;
+    background: rgba(139, 30, 30, 0.2);
     border-color: #8b1e1e;
+    transform: translateY(-2px);
   }
-  .btn svg { width: 20px; height: 20px; fill: #c9a96a; }
+  .btn svg { 
+    width: 20px; 
+    height: 20px; 
+    fill: #c9a96a; 
+  }
   .footer {
     margin-top: 40px;
     font-size: 12px;
     color: #6a6558;
   }
-  .footer span { color: #8b1e1e; }
+  .footer span { 
+    color: #8b1e1e; 
+  }
+  @media (max-width: 600px) {
+    .wrap {
+      padding: 36px 20px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .buttons {
+      flex-direction: column;
+    }
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 </style>
 </head>
 <body>
+  <div class="bg-logo"></div>
+  <div class="overlay"></div>
+  
   <div class="wrap">
     <div class="top-line"></div>
     <h1>تکیه موسی بن جعفر (علیه‌السلام)</h1>
