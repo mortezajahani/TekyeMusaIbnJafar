@@ -7,7 +7,7 @@
     
     <!-- Fonts -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -67,8 +67,9 @@
         }
 
         .logo {
-            font-family: 'Lalezar', cursive;
-            font-size: 1.5rem;
+            font-family: 'Vazirmatn', sans-serif;
+            font-weight: 900;
+            font-size: 1.3rem;
             color: var(--secondary-color);
             text-decoration: none;
             display: flex;
@@ -149,12 +150,32 @@
         }
 
         .hero-title {
-            font-family: 'Lalezar', cursive;
-            font-size: 4rem;
-            margin-bottom: 1rem;
+            font-family: 'Vazirmatn', sans-serif;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
             color: var(--secondary-color);
             text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
             line-height: 1.3;
+            text-align: right;
+        }
+
+        .title-line-1 {
+            font-size: 2.8rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .title-line-2 {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .title-line-3 {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            opacity: 0.9;
         }
 
         .hero-subtitle {
@@ -248,7 +269,8 @@
         }
 
         .section-title {
-            font-family: 'Lalezar', cursive;
+            font-family: 'Vazirmatn', sans-serif;
+            font-weight: 900;
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 3rem;
@@ -310,7 +332,8 @@
         }
 
         .counter {
-            font-family: 'Lalezar', cursive;
+            font-family: 'Vazirmatn', sans-serif;
+            font-weight: 900;
             font-size: 6rem;
             color: var(--secondary-color);
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -499,7 +522,19 @@
             }
 
             .hero-title {
-                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .title-line-1 {
+                font-size: 2rem;
+            }
+
+            .title-line-2 {
+                font-size: 2.8rem;
+            }
+
+            .title-line-3 {
+                font-size: 1.5rem;
             }
 
             .hero-subtitle {
@@ -577,7 +612,11 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">تکیه موسی ابن جعفر علیه السلام</h1>
+                <h1 class="hero-title">
+                    <span class="title-line-1">تکیه</span>
+                    <span class="title-line-2">موسی ابن جعفر</span>
+                    <span class="title-line-3">علیه السلام</span>
+                </h1>
                 <h2 class="hero-subtitle">مأمن عزاداران حسینی</h2>
                 <p class="hero-description">
                     این تکیه مبارک سالیان متمادی است که در دهه اول محرم‌الحرام، 
