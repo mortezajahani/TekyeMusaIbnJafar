@@ -79,7 +79,7 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .nav-link {
@@ -89,6 +89,7 @@
             transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
+            font-size: 0.95rem;
         }
 
         .nav-link::after {
@@ -173,6 +174,39 @@
             border-radius: 15px;
             border-right: 5px solid var(--secondary-color);
             backdrop-filter: blur(5px);
+            margin-bottom: 2rem;
+        }
+
+        .hero-social-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(212, 175, 55, 0.2);
+            border: 2px solid var(--secondary-color);
+            border-radius: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .social-btn:hover {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .social-btn i {
+            font-size: 1.2rem;
         }
 
         @keyframes fadeInRight {
@@ -332,7 +366,7 @@
 
         .contact-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -369,6 +403,26 @@
         .contact-info {
             color: #666;
             line-height: 1.8;
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            background: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .map-link:hover {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-2px);
         }
 
         /* Footer */
@@ -458,6 +512,10 @@
                 padding: 1.5rem;
             }
 
+            .hero-social-links {
+                justify-content: center;
+            }
+
             .history-content {
                 grid-template-columns: 1fr;
             }
@@ -502,6 +560,12 @@
                 <li><a href="#history" class="nav-link">تاریخچه</a></li>
                 <li><a href="#poetry" class="nav-link">شعرخوانی</a></li>
                 <li><a href="#contact" class="nav-link">ارتباط با ما</a></li>
+                <li><a href="https://www.aparat.com/TEKYEMUSAIBNJAFAR" target="_blank" class="nav-link">
+                    <i class="fas fa-video"></i> کانال آپارات
+                </a></li>
+                <li><a href="https://rubika.ir/TekyeMusaIbnJafar" target="_blank" class="nav-link">
+                    <i class="fas fa-share-alt"></i> کانال روبیکا
+                </a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
@@ -521,6 +585,16 @@
                     اینجا محفلی است برای اشک و آه، برای یاد و نام سیدالشهدا، 
                     و برای زنده نگه داشتن یاد و خاطره شهدای کربلا.
                 </p>
+                <div class="hero-social-links">
+                    <a href="https://www.aparat.com/TEKYEMUSAIBNJAFAR" target="_blank" class="social-btn">
+                        <i class="fas fa-video"></i>
+                        کانال آپارات
+                    </a>
+                    <a href="https://rubika.ir/TekyeMusaIbnJafar" target="_blank" class="social-btn">
+                        <i class="fas fa-share-alt"></i>
+                        کانال روبیکا
+                    </a>
+                </div>
             </div>
         </div>
         <div class="scroll-indicator" onclick="document.getElementById('history').scrollIntoView({behavior: 'smooth'})">
@@ -585,31 +659,12 @@
                     </div>
                     <div class="contact-title">آدرس</div>
                     <div class="contact-info">
-                        ایران، [شهر شما]<br>
-                        [آدرس دقیق تکیه]
+                        همدان، پاسداران، حسنی حلم
                     </div>
-                </div>
-                
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-title">تلفن تماس</div>
-                    <div class="contact-info">
-                        [شماره تلفن]<br>
-                        [ساعات پاسخگویی]
-                    </div>
-                </div>
-                
-                <div class="contact-card fade-in">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-title">ایمیل</div>
-                    <div class="contact-info">
-                        [آدرس ایمیل]<br>
-                        برای ارسال نظرات و پیشنهادات
-                    </div>
+                    <a href="https://neshan.org/maps/places/_bsK4oe56bmp#c34.797-48.501-16z-0p" target="_blank" class="map-link">
+                        <i class="fas fa-map-marked-alt"></i>
+                        نمایش در نقشه نشان
+                    </a>
                 </div>
                 
                 <div class="contact-card fade-in">
@@ -618,8 +673,7 @@
                     </div>
                     <div class="contact-title">زمان برگزاری</div>
                     <div class="contact-info">
-                        دهه اول محرم الحرام<br>
-                        هر شب از غروب تا晚
+                        یازده شب اول محرم الحرام
                     </div>
                 </div>
             </div>
@@ -632,10 +686,8 @@
             تمامی حقوق محفوظ است | تکیه موسی ابن جعفر علیه السلام
         </div>
         <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-telegram"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fas fa-rss"></i></a>
+            <a href="https://www.aparat.com/TEKYEMUSAIBNJAFAR" target="_blank"><i class="fas fa-video"></i></a>
+            <a href="https://rubika.ir/TekyeMusaIbnJafar" target="_blank"><i class="fas fa-share-alt"></i></a>
         </div>
     </footer>
 
