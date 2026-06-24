@@ -7,7 +7,7 @@
     
     <!-- Fonts -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -666,7 +666,7 @@
                 </div>
                 <div class="counter-box fade-in">
                     <div class="counter-label">قدمت تکیه</div>
-                    <div class="counter" id="counter">0</div>
+                    <div class="counter" id="counter">۰</div>
                     <div class="counter-suffix">سال</div>
                 </div>
             </div>
@@ -731,20 +731,28 @@
     </footer>
 
     <script>
-        // Counter Animation - 109 years
+        // Counter Animation - 109 years with Persian numbers
         function animateCounter() {
             const counter = document.getElementById('counter');
             const targetAge = 109;
+            
+            // Function to convert English numbers to Persian
+            function toPersianNumber(num) {
+                const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+                return num.toString().replace(/\d/g, function(w) {
+                    return persianDigits[+w];
+                });
+            }
             
             let current = 0;
             const increment = targetAge / 100;
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= targetAge) {
-                    counter.textContent = targetAge;
+                    counter.textContent = toPersianNumber(targetAge);
                     clearInterval(timer);
                 } else {
-                    counter.textContent = Math.floor(current);
+                    counter.textContent = toPersianNumber(Math.floor(current));
                 }
             }, 30);
         }
