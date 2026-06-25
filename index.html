@@ -392,6 +392,43 @@
             border-radius: 10px;
         }
 
+        /* Playlist Links */
+        .playlist-links {
+            max-width: 900px;
+            margin: 2rem auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .playlist-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid var(--secondary-color);
+            border-radius: 12px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .playlist-link:hover {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .playlist-link i {
+            font-size: 1.3rem;
+        }
+
         /* Contact Section */
         .contact {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -576,6 +613,17 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .playlist-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .playlist-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
         }
 
         /* Animations on Scroll */
@@ -695,6 +743,12 @@
                     </div>
                 </div>
             </div>
+            <div class="playlist-links fade-in">
+                <a href="https://www.aparat.com/playlist/26529180" target="_blank" class="playlist-link">
+                    <i class="fas fa-play-circle"></i>
+                    برای دیدن سخنرانی‌های بیشتر اینجا کلیک کنید
+                </a>
+            </div>
         </div>
     </section>
 
@@ -708,6 +762,16 @@
                         <script type="text/JavaScript" src="https://www.aparat.com/embed/yym8v6g?data[rnddiv]=12849552806&data[responsive]=yes&muted=true&recom=self"></script>
                     </div>
                 </div>
+            </div>
+            <div class="playlist-links fade-in">
+                <a href="https://www.aparat.com/playlist/26529180" target="_blank" class="playlist-link">
+                    <i class="fas fa-feather-alt"></i>
+                    پخش‌نمای شعرخوانی
+                </a>
+                <a href="https://www.aparat.com/playlist/26544105" target="_blank" class="playlist-link">
+                    <i class="fas fa-microphone-alt"></i>
+                    پخش‌نمای مداحی
+                </a>
             </div>
         </div>
     </section>
