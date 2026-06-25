@@ -819,12 +819,14 @@
     </footer>
 
     <script>
-        // Counter Animation - 109 years with Persian numbers
+        // Counter Animation - Auto-updating age based on current year
         function animateCounter() {
             const counter = document.getElementById('counter');
-            const targetAge = 109;
             
-            // Function to convert English numbers to Persian
+            // سال پایه تأسیس تکیه
+            const startYear = 1296;
+            
+            // تابع تبدیل اعداد انگلیسی به فارسی
             function toPersianNumber(num) {
                 const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
                 return num.toString().replace(/\d/g, function(w) {
@@ -832,8 +834,25 @@
                 });
             }
             
+            // تابع دریافت سال جاری شمسی
+            function getCurrentJalaliYear() {
+                const now = new Date();
+                // گرفتن سال به فرمت شمسی و تبدیل اعداد فارسی به انگلیسی برای محاسبه
+                const jalaliYearStr = now.toLocaleDateString('fa-IR', { year: 'numeric' });
+                const jalaliYear = parseInt(jalaliYearStr.replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d)));
+                return jalaliYear;
+            }
+            
+            // محاسبه خودکار قدمت بر اساس سال جاری
+            const currentYear = getCurrentJalaliYear();
+            const targetAge = currentYear - startYear;
+            
             let current = 0;
-            const increment = targetAge / 100;
+            const duration = 2000; // مدت زمان انیمیشن (2 ثانیه)
+            const steps = 60;
+            const increment = targetAge / steps;
+            const stepTime = duration / steps;
+            
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= targetAge) {
@@ -842,7 +861,7 @@
                 } else {
                     counter.textContent = toPersianNumber(Math.floor(current));
                 }
-            }, 30);
+            }, stepTime);
         }
 
         // Intersection Observer for animations
