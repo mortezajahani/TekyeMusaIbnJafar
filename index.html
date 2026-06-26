@@ -850,7 +850,7 @@
         function animateCounter() {
             const counter = document.getElementById('counter');
             
-            // سال پایه تأسیس تکیه
+            // سال پایه تأسیس تکیه در ایران
             const startYear = 1286;
             
             // تابع تبدیل اعداد انگلیسی به فارسی
@@ -861,12 +861,15 @@
                 });
             }
             
-            // تابع دریافت سال جاری شمسی
+            // تابع دریافت سال جاری شمسی - روش مطمئن‌تر
             function getCurrentJalaliYear() {
                 const now = new Date();
-                const jalaliYearStr = now.toLocaleDateString('fa-IR', { year: 'numeric' });
-                const jalaliYear = parseInt(jalaliYearStr.replace(/[۰-]/g, d => '۰۱۳۴۵۶۷۹'.indexOf(d)));
-                return jalaliYear;
+                const formatter = new Intl.DateTimeFormat('fa-IR-u-nu-latn', {
+                    year: 'numeric',
+                    calendar: 'persian'
+                });
+                const jalaliYearStr = formatter.format(now);
+                return parseInt(jalaliYearStr);
             }
             
             // محاسبه خودکار قدمت بر اساس سال جاری
