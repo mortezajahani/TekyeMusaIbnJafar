@@ -722,8 +722,9 @@
                         این مجلس با هدف زنده نگه داشتن یاد و خاطره امام حسین علیه السلام و یاران باوفایش برپا می‌گردد.
                     </p>
                     <p>
-                        از سال <strong>۱۲۹۶ هجری شمسی</strong> تاکنون، این تکیه در ایران 
-                        برگزار می‌شود و نسل‌های مختلفی از عزاداران حسینی در آن شرکت کرده‌اند. 
+                        از سال <strong>۱۲۹۶ هجری شمسی</strong>، این تکیه در شهر <strong>همدان</strong> و در محله قدیمی <strong>سرگذر</strong> که از دیرباز اغلب ساکنان آن مسیحی بوده‌اند، برگزار می‌شود. این هم‌نشینی جالب میان عزاداران حسینی و همسایگان مسیحی، نشان‌دهنده پیوند عمیق محبت و احترام میان پیروان ادیان در این سرزمین است. نسل‌های مختلفی از عزاداران حسینی در این تکیه شرکت کرده‌اند.
+                    </p>
+                    <p>
                         در این مراسم‌ها، مداحان اهل بیت به مرثیه‌سرایی و شعرخوانی می‌پردازند 
                         و شرکت‌کنندگان به عزاداری می‌پردازند.
                     </p>
@@ -864,7 +865,6 @@
             // تابع دریافت سال جاری شمسی
             function getCurrentJalaliYear() {
                 const now = new Date();
-                // گرفتن سال به فرمت شمسی و تبدیل اعداد فارسی به انگلیسی برای محاسبه
                 const jalaliYearStr = now.toLocaleDateString('fa-IR', { year: 'numeric' });
                 const jalaliYear = parseInt(jalaliYearStr.replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d)));
                 return jalaliYear;
@@ -875,7 +875,7 @@
             const targetAge = currentYear - startYear;
             
             let current = 0;
-            const duration = 2000; // مدت زمان انیمیشن (2 ثانیه)
+            const duration = 2000;
             const steps = 60;
             const increment = targetAge / steps;
             const stepTime = duration / steps;
